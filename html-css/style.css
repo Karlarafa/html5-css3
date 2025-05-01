@@ -1,0 +1,233 @@
+@charset "UTF-8"; /* Definindo a codificação do arquivo como UTF-8, o que é importante para garantir que caracteres especiais sejam exibidos corretamente. */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&family=Parisienne&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* Link da font do google*/
+
+@font-face { /* Link da fonte do android que baixamos no arquivo do site:DAFONT **/
+    font-family:'Android' ;
+    src: url(/pacote-projeto-d010/fontes/idroid.otf) format('opentype'); /* Caminho do arquivo da fonte que baixamos */
+    font-weight: normal;
+}
+
+/* Paletas de cores que usaremos:
+
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+/*                 VARIÁVEIS
+Usando variáveis no CSS, o que facilita a manutenção do código, pois se eu quiser mudar a cor de fundo do site, por exemplo, eu só mudo aqui e não em cada lugar que usei a cor.*/
+/* Além disso, o código fica mais limpo e fácil de entender. */
+
+
+:root{ /*Pseudo classe raiz da árvore, tudo oq eu definir aqui serve para o documento inteiro*/
+    
+    --cor1: #c5ebd6;  /* Toda variável no Css começa com -- */
+    --cor2: #83e1ad;
+    --cor3: #3ddc84;
+    --cor4: #2fa866;
+    --cor5: #1a5c37;
+    --cor6: #063d1e;
+    --cor7: white; 
+    --cor8: #408979; 
+    --cor9:rgba(0, 0, 0, 0.721); 
+    --cor10: rgb(37, 95, 183); 
+    --cor11:rgba(215, 134, 21, 0.901); 
+    --font-padrão: arial, verdana, sans-serif; /* Fontes padrão do site */
+    --font-destaque: "Bebas Neue", sans-serif; /* Fonte de destaque do site */
+    --font-android:'Android', sans-serif; /* Fonte android do site */
+}
+
+/* Seleciona todos os elementos do site e aplica as regras de estilo a eles. */
+*{ 
+    margin: 0px; /* Remove a margem padrão do navegador */
+    padding: 0px; /* Remove o padding padrão do navegador */ 
+    text-decoration: none;  /* Remove o sublinhado dos links */
+
+}
+
+body{
+    background-color:#c4e4d2;
+    font-family: var(--font-padrao); /* Aqui eu estou chamando a variável que criei acima, assim se eu mudar a fonte aqui, muda em todo o site. */
+}
+
+a.externo::after{ /* Adiciona um ícone de link externo após o link */
+    content: '\26D3 \FE0F\00A0'; /* Ícones de link externo coletado no site: https://emojipedia.org/*/
+
+}
+
+header{
+    min-height: 150px; /* Altura mínima do header, para exibir em qualquer tipo de dispositivo. */;
+    padding-top: 40px; /* Espaçamento superior do header, para não ficar colado com o topo da página. */
+    background-image: linear-gradient(to bottom, var(--cor4), var(--cor6)); /* Gradiente de cor do header, do verde mais claro para o verde mais escuro. */
+    display: flex;  /* Flexbox é uma maneira de organizar os elementos na tela, o que facilita a responsividade do site. */
+    flex-direction: column; /* Alinha os elementos na vertical */
+    align-items: center; /* Alinha os elementos no centro da tela */   
+}
+
+header > h1{
+    color: var(--cor7);
+    font-family: var(--font-destaque);
+    margin-bottom: 30px; /* Margem inferior do título, para não ficar colado com o texto abaixo. */
+    font-size: 3em; /* Tamanho da fonte do título */
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.833); /* Adiciona uma sombra ao header */
+  }
+
+header > p{
+    color:var(--cor7);
+    padding: 0px 10px 10px 10px; /* Espaçamento interno do parágrafo, para não ficar colado com o título. */
+    padding-bottom: 35px;
+    font-size: 1.2em; /* Tamanho da fonte do parágrafo */
+    color: var(--cor7); /* Cor do texto do parágrafo */
+    font-weight: 300; /* Peso da fonte do parágrafo */
+    max-width: 700px; /* Largura máxima do parágrafo */
+    margin:auto; /* Pois se tornou um bloco quando coloco altura. Para ele centralizar o conteúdo. */
+}
+
+nav{
+    background-color: var(--cor6);  /* Cor de fundo do menu de navegação */
+    padding: 10px; /* Espaçamento interno do menu de navegação 
+    */
+    box-shadow: 0px 7px 7px rgba(11, 11, 11, 0.792); /* Adiciona uma sombra ao menu de navegação */   
+}
+
+nav > a {
+    text-decoration: none;  /* Remove o sublinhado dos links */
+    padding: 10px; /* Espaçamento interno dos links */
+    color: var(--cor3); /* Cor do texto dos links */
+    font-weight: 300; /* Peso da fonte dos links */
+}
+
+nav > a:hover{  /* Efeito de passar o mouse em cima do link */
+    background-color: var(--cor8); /* Cor de fundo do link ao passar o mouse */
+    border-radius: 5px; /* Arredonda os cantos do link ao passar o mouse */
+    color: var(--cor9); /* Cor do texto do link ao passar o mouse */
+    transition-duration: .5s; /* Duração da transição do efeito de passar o mouse */
+}
+/*-------------------------------------------------------------------------------------------
+                   Conteúdo principal,meio.*/    
+
+main{
+    max-width: 300px; /* Largura máxima do elemento main */
+    max-width: 1000px; /* Largura máxima do elemento main */
+    margin: auto; /* Centraliza o elemento main na página */
+    margin-bottom: 30px; /* Margem inferior do elemento main, para não ficar colado com o footer. */
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao elemento main */
+    border-radius: 0px 0px 10px 10px; /* Arredonda os cantos do elemento main */
+    background-color:var(--cor1) ;
+}
+
+main  p{
+    margin: 15px 0px; /* Margem superior e inferior de todos os parágrafos, para não ficar colado com o texto acima e abaixo. */
+    text-align: justify; /* Alinha o texto dos parágrafos à esquerda */
+    text-indent: 30px;  /* Indenta o primeiro parágrafo, para não ficar colado com o texto acima. */
+    line-height: 1.5em; /* Altura da linha do texto, para não ficar muito espaçado. */
+    font-size: 1em;
+}
+
+main strong{
+    color: var(--cor5);
+    font-weight: bold;  
+}
+
+main a{
+    background-color: var(--cor2);
+    color: var(--cor9);
+    border-radius: 3px;
+    padding: 3px 3px; /* Espaçamento interno do texto em negrito, para não ficar colado com o texto ao lado. */
+}
+
+main a:hover{
+    background-color: var(--cor10);
+    color:var(--cor9);
+    text-decoration: underline; /* Adiciona um sublinhado ao link ao passar o mouse */
+
+}
+
+main h1{
+    color: var(--cor5);
+    font-family: var(--font-android);
+}
+
+main h2{
+    background-image: linear-gradient(to right, var(--cor2), var(--cor1));
+    color: var(--cor5);
+    font-family: var(--font-destaque);
+    font-size: 2em ;
+    padding: 3px;
+    border-radius: 5px;
+   text-shadow: 0px 0px 10px rgba(14, 13, 13, 0.553); /* Adiciona uma sombra ao header */
+
+}
+main img{
+    width: 100%;    /* Largura da imagem 100% do elemento pai (main) - para a imagem se expremer e se adaptar*/  
+
+}
+
+main img.pequena { /* Sempre colocar juntas as palavras, basta um espaço para não dar certo. */
+
+    display: block; /* Exibe a imagem como um bloco, pois a imagem ela não se identifica como um bloco.*/
+    margin: auto; /* Centraliza a imagem na página */
+    max-width: 350px; /* Largura da imagem 50% do elemento pai (main) - para a imagem se expremer e se adaptar*/
+    
+}
+
+/*----------------Configuração para o vídeo-------------*/
+
+div.video {
+    background-color: var(--cor8); /* Cor de fundo do vídeo */
+    padding: 20px; /* Espaçamento interno do vídeo */;
+    margin: 0px -20px;
+    display: flex; /* Flexbox é uma maneira de organizar os elementos na tela, o que facilita a responsividade do site. */
+    justify-content: center; /* Alinha os elementos no centro da tela */
+    align-items: center; /* Alinha os elementos no centro da tela */
+}
+
+
+aside{
+    background-color: var(--cor2);  /* Cor de fundo do aside */
+    padding: 10px; /* Espaçamento interno do aside */
+    border-radius: 10px; /* Arredonda os cantos do aside */
+    margin: 8px; /*Para não ficar colado com o conteúdo de cima : vídeo.*/   
+}
+aside > h3{
+    background-color: var(--cor4); /* Cor de fundo do título do aside */
+    padding: 5px;
+    margin: -10px -10px -0px -10px; /* Margem negativa para o título do aside, para não ficar colado com o conteúdo de cima. */
+    border-radius: 10px 10px 0px 0px;   /* Arredonda os cantos do título do aside */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    color: var(--cor7);
+    font-family: var(--font-padrão);
+    font-size: 1.1em ;
+
+}
+
+aside > ul {
+    list-style-type: '\002714\00A0\00A0'; /* Adiciona o ícone de check que peguei o cód. no site: https://erikasarti.com/html/dingbats-simbolos-desenhos/ E o : 00A0 cria um leve espaço do icon para o texto.*/
+    list-style-position: inside; /* Ajusta a posição da lista, fazendo com que as bolinhas fiquem dentro do box Aside. */
+    columns: 2; /* Colunas da lista, para ficar mais organizado. */
+
+}
+
+
+footer{
+    background-color: var(--cor5);
+    color: var(--cor7);
+    text-align: center; /* Alinha o texto do footer ao centro */
+    padding: 10px;
+    font-size: 0.8em; /* Tamanho da fonte do footer */
+}
+
+footer a {
+    color:var(--cor7); /* Cor do texto do link no footer */
+    font-weight: bold; /* Peso da fonte do link no footer */
+    text-decoration: none; /* Remove o sublinhado do link no footer */
+}
+
+footer a:hover{
+    text-decoration: underline; /* Adiciona um sublinhado ao link no footer ao passar o mouse */
+    color: var(--cor11); /* Cor do texto do link no footer ao passar o mouse */
+}

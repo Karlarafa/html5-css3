@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Responsividade</title>
+</head>
+
+<style>
+    body{
+        background-color: cornflowerblue;
+    }
+    main{
+        background-color: white;
+        padding:20px ;
+        border-radius: 20px;
+
+        min-width: 280px;/* Largura mínima */
+        max-width: 800px;/* Largura máxima */
+        margin: auto;/* Centraliza o conteúdo */
+        
+    }   
+    img{
+        width: 100%;/* Imagem ocupa 100% da largura do elemento pai */
+  
+    }
+</style>
+<body>
+    <main>
+
+<h1>Testando Responsividade</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, sint inventore sunt veniam non animi ea impedit distinctio blanditiis illo corporis quos maiores cupiditate reiciendis ipsum dolore hic soluta at.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate minima quis assumenda recusandae nesciunt! Est minus quae non eveniet, impedit, doloribus numquam beatae fugit, eum obcaecati autem odio. Rem, nesciunt! </p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem numquam ratione repellat, voluptas, alias omnis nostrum earum, necessitatibus consequuntur a doloremque? Unde iusto praesentium porro ad corrupti voluptatum doloribus? Quis!</p>
+
+<!-- Elemento para imagens responsivas -->
+<picture> 
+    <source media="(max-width: 600px)" srcset="pacote-projeto-d010/imagens/irina-blok-pq.jpg"> <!--Aqui eu quis informar: quando a imagem for menor que o tamanho do máximo definido, mude a imagem para a menor.-->
+    <img src="pacote-projeto-d010/imagens/irina-blok.jpg" alt="Irina Block" title="Irina Blok"> <!--Imagem responsiva, ocupa 100% do elemento pai-->
+    </source> 
+</picture>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, architecto. Ut, laudantium obcaecati sequi cum itaque facere earum veritatis hic sed ducimus corrupti libero adipisci, suscipit totam repellat, eligendi in.</p>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In voluptatem minus sapiente, neque accusamus cupiditate placeat pariatur tenetur! Tenetur fuga tempore laboriosam, quia sapiente dolorem possimus rerum saepe sed magnam.</p>
+
+</main>
+</body>
+</html>
